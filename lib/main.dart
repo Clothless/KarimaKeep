@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:karima_keep/views/home_view.dart';
+import 'package:karima_keep/views/new_diary.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: HomeView(),
+      home: NewDiary(),
     );
   }
 }

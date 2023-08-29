@@ -11,9 +11,17 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        leading: Icon(Icons.menu, color: Colors.white,),
+        leading: Icon(
+          Icons.menu,
+          color: Colors.white,
+          size: 30,
+          ),
         actions: [
-          Icon(Icons.search, color: Colors.white,)
+          Icon(
+            Icons.search,
+            color: Colors.white,
+            size: 30,
+            ),
         ],
       ),
       body: Container(
