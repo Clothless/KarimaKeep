@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:karima_keep/customs/custom_text.dart';
+import 'package:karima_keep/views/new_diary.dart';
+import 'package:karima_keep/views/profile.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -72,30 +75,40 @@ class HomeView extends StatelessWidget {
                       size: 30
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.blue,
-                    ),
-                    height: MediaQuery.of(context).size.width * 0.18,
-                    width: MediaQuery.of(context).size.width * 0.18,
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.125,
-                      ),
-                  ),
-                    Container(
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(NewDiary());
+                    },
+                    child: Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.grey.shade700,
+                        color: Colors.blue,
                       ),
-                      height: 40,
-                      width: 40,
+                      height: MediaQuery.of(context).size.width * 0.18,
+                      width: MediaQuery.of(context).size.width * 0.18,
                       child: Icon(
-                        Icons.person,
+                        Icons.add,
                         color: Colors.white,
-                        size: 30,
+                        size: MediaQuery.of(context).size.width * 0.125,
+                        ),
+                    ),
+                  ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(Profile());
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.grey.shade700,
+                        ),
+                        height: 40,
+                        width: 40,
+                        child: Icon(
+                          Icons.person,
+                          color: Colors.white,
+                          size: 30,
+                        ),
                       ),
                     ),
                 ],

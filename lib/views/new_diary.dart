@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:karima_keep/customs/custom_button.dart';
 import 'package:karima_keep/customs/custom_text.dart';
 import 'package:karima_keep/customs/custom_text_field.dart';
@@ -18,11 +19,16 @@ class NewDiary extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        leading: const Icon(
-          Icons.close,
-          color: Colors.white,
-          size: 30,
-          ),
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: const Icon(
+            Icons.close,
+            color: Colors.white,
+            size: 30,
+            ),
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(top: 20, right: 10),
@@ -40,62 +46,66 @@ class NewDiary extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         child: Container(
           height: 50,
-          width: MediaQuery.of(context).size.width * 0.8,
+          width: MediaQuery.of(context).size.width * 0.85,
           decoration: BoxDecoration(
             color: Colors.deepPurple.withOpacity(0.2),
             borderRadius: BorderRadius.circular(10),
           ),
           child: ListView(
-            padding: EdgeInsets.only(left: 10, right: 10),
+            padding: const EdgeInsets.only(left: 10, right: 10),
             scrollDirection: Axis.horizontal,
             children: const [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Icon(
-                    Icons.imagesearch_roller_outlined,
+                    Icons.format_bold_sharp,
                     color: Colors.white,
-                    size: 40,
+                    size: 30,
                   ),
-                  Icon(
-                    Icons.image_outlined,
-                    color: Colors.white,
-                    size: 40,
-                  ),
-                  Icon(
-                    Icons.copy_all_rounded,
-                    color: Colors.white,
-                    size: 40,
-                  ),
-                  Icon(
-                    Icons.paste,
-                    color: Colors.white,
-                    size: 40,
-                  ),
-                  Icon(
-                    Icons.emoji_emotions_outlined,
-                    color: Colors.white,
-                    size: 40,
-                  ),
+                  SizedBox(width: 10,),
                   Icon(
                     Icons.text_fields_rounded,
                     color: Colors.white,
-                    size: 40,
+                    size: 30,
                   ),
+                  SizedBox(width: 10,),
                   Icon(
-                    Icons.task_alt_rounded,
+                    Icons.format_color_text_rounded,
                     color: Colors.white,
-                    size: 40,
+                    size: 30,
                   ),
+                  SizedBox(width: 10,),
                   Icon(
-                    Icons.list,
+                    Icons.format_italic,
                     color: Colors.white,
-                    size: 40,
+                    size: 30,
                   ),
+                  SizedBox(width: 10,),
+                  Icon(
+                    Icons.format_underline,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  SizedBox(width: 10,),
+                  Icon(
+                    Icons.photo_outlined,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  SizedBox(width: 10,),
+                  Icon(
+                    Icons.copy_rounded,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  SizedBox(width: 10,),
                   Icon(
                     Icons.mic,
                     color: Colors.white,
-                    size: 40,
+                    size: 30,
                   ),
+                  
                 ],
               ),
             ]
@@ -126,7 +136,7 @@ class NewDiary extends StatelessWidget {
                   ),
                   const SizedBox(width: 5,),
                   CustomText(
-                    text: day.month.toString(),
+                    text: "/" + day.month.toString() + "/",
                     fontSize: 22,
                   ),
                   const SizedBox(width: 5,),
